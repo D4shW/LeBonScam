@@ -1,0 +1,73 @@
+{
+    "manifest_version": 3,
+    "name": "LeBonScam",
+    "version": "1.0.0",
+    "description": "Extension de protection contre les arnaques sur LeBonCoin - Détection automatique des annonces suspectes",
+
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+
+    "host_permissions": [
+        "https://www.leboncoin.fr/*"
+    ],
+
+    "background": {
+        "service_worker": "backgroung/background.js",
+        "type": "module"
+    },
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.leboncoin.fr/*"
+            ],
+            "js": [
+                "utils/dom-helpers.js",
+                "utils/text-analyzer.js",
+                "utils/price-analyzer.js",
+                "utils/price-reference.js",
+                "content/throttle-manager.js",
+                "content/visual-indicator.js",
+                "content/real-time-monitor.js",
+                "content/content.js"
+            ],
+            "css": [
+                "styles/content.css"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_name": "LeBonScam - Protection anti-arnaques",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "32": "icons/icon32.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+
+    "web_accessble_ressources": [
+        {
+            "ressources": [
+                "data/*.json",
+                "content/content.css"
+            ],
+            "matches": [
+                "https://www.leboncoin.fr/*"
+            ]
+        }
+    ]
+}
