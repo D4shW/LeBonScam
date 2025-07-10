@@ -1,0 +1,174 @@
+{
+  "text_patterns": {
+    "multiple_exclamations": {
+      "pattern": "!{2,}",
+      "risk_level": "medium",
+      "description": "Utilisation excessive de points d'exclamation"
+    },
+    "all_caps": {
+      "pattern": "[A-Z]{5,}",
+      "risk_level": "medium", 
+      "description": "Texte en majuscules (cri, urgence artificielle)"
+    },
+    "phone_in_description": {
+      "pattern": "0[1-9](?:[0-9]{8})",
+      "risk_level": "high",
+      "description": "Numéro de téléphone dans la description (contournement)"
+    },
+    "email_in_description": {
+      "pattern": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+      "risk_level": "high",
+      "description": "Email dans la description (contournement)"
+    },
+    "foreign_phone": {
+      "pattern": "\\+(?!33)[0-9]{10,15}",
+      "risk_level": "high",
+      "description": "Numéro de téléphone étranger"
+    },
+    "repeated_characters": {
+      "pattern": "([a-zA-Z])\\1{3,}",
+      "risk_level": "low",
+      "description": "Caractères répétés anormalement"
+    },
+    "price_in_text": {
+      "pattern": "[0-9]+\\s*€",
+      "risk_level": "low",
+      "description": "Prix mentionné dans le texte"
+    }
+  },
+  
+  "behavioral_patterns": {
+    "new_account": {
+      "condition": "account_age < 30",
+      "risk_level": "medium",
+      "description": "Compte créé récemment"
+    },
+    "no_reviews": {
+      "condition": "reviews_count = 0",
+      "risk_level": "medium",
+      "description": "Aucun avis sur le vendeur"
+    },
+    "single_photo": {
+      "condition": "photos_count = 1",
+      "risk_level": "medium",
+      "description": "Une seule photo fournie"
+    },
+    "stock_photos": {
+      "condition": "photos_quality = professional",
+      "risk_level": "high",
+      "description": "Photos de qualité professionnelle suspectes"
+    },
+    "multiple_same_items": {
+      "condition": "seller_similar_items > 5",
+      "risk_level": "high",
+      "description": "Vendeur avec beaucoup d'objets identiques"
+    }
+  },
+  
+  "price_patterns": {
+    "too_good_to_be_true": {
+      "condition": "price < market_value * 0.3",
+      "risk_level": "high",
+      "description": "Prix anormalement bas (moins de 30% de la valeur)"
+    },
+    "round_number": {
+      "condition": "price % 100 = 0 AND price > 200",
+      "risk_level": "low",
+      "description": "Prix rond suspect pour objet de valeur"
+    },
+    "psychological_pricing": {
+      "condition": "price ends with 99 OR price ends with 95",
+      "risk_level": "low",
+      "description": "Prix psychologique inhabituel sur LeBonCoin"
+    }
+  },
+  
+  "communication_patterns": {
+    "immediate_contact": {
+      "description": "Demande de contact immédiat hors plateforme",
+      "risk_level": "high",
+      "indicators": [
+        "contactez moi rapidement",
+        "appelez vite",
+        "message urgent"
+      ]
+    },
+    "external_platform": {
+      "description": "Redirection vers une autre plateforme",
+      "risk_level": "high",
+      "indicators": [
+        "voir sur facebook",
+        "plus d'infos sur",
+        "site web",
+        "lien en bio"
+      ]
+    },
+    "advance_payment": {
+      "description": "Demande de paiement avant rencontre",
+      "risk_level": "high",
+      "indicators": [
+        "payement avant",
+        "réservation avec arrhes",
+        "acompte obligatoire"
+      ]
+    }
+  },
+  
+  "geographical_patterns": {
+    "vague_location": {
+      "description": "Localisation volontairement vague",
+      "risk_level": "medium",
+      "indicators": [
+        "région de",
+        "proche de",
+        "alentours",
+        "secteur"
+      ]
+    },
+    "delivery_only": {
+      "description": "Refuse la remise en main propre",
+      "risk_level": "high",
+      "indicators": [
+        "envoi seulement",
+        "pas de rdv",
+        "livraison uniquement"
+      ]
+    }
+  },
+  
+  "category_specific": {
+    "electronics": {
+      "suspicious_specs": {
+        "pattern": "512GB|1TB|iPhone 14|Samsung S23",
+        "risk_level": "medium",
+        "description": "Modèles très demandés souvent contrefaits"
+      },
+      "missing_serial": {
+        "risk_level": "high",
+        "description": "Numéro de série manquant pour électronique"
+      }
+    },
+    "luxury": {
+      "no_authenticity_proof": {
+        "risk_level": "high",
+        "description": "Pas de preuve d'authenticité pour article de luxe"
+      },
+      "suspiciously_new": {
+        "pattern": "jamais porté|état neuf|encore emballé",
+        "risk_level": "medium",
+        "description": "Article de luxe prétendument neuf"
+      }
+    },
+    "vehicles": {
+      "no_papers": {
+        "risk_level": "high",
+        "description": "Papiers du véhicule non mentionnés"
+      },
+      "export_mention": {
+        "pattern": "export|étranger|professionnel",
+        "risk_level": "medium",
+        "description": "Mention d'export ou usage professionnel"
+      }
+    }
+  }
+}

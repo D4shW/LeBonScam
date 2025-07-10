@@ -1,0 +1,148 @@
+{
+  "urgency_indicators": {
+    "high_risk": [
+      "urgent",
+      "départ imminent",
+      "partir demain",
+      "vente rapide",
+      "cause déménagement urgent",
+      "liquidation",
+      "divorce",
+      "décès",
+      "mutation",
+      "expatriation"
+    ],
+    "medium_risk": [
+      "déménagement",
+      "cause départ",
+      "vente cause",
+      "fin de bail"
+    ]
+  },
+  
+  "payment_scams": {
+    "high_risk": [
+      "western union",
+      "moneygram",
+      "mandat cash",
+      "virement avant",
+      "paypal famille",
+      "envoi argent",
+      "frais de port",
+      "frais livraison",
+      "acompte",
+      "arrhes avant",
+      "bitcoin",
+      "crypto"
+    ],
+    "medium_risk": [
+      "chèque",
+      "espèces seulement",
+      "pas de cb",
+      "liquide uniquement"
+    ]
+  },
+  
+  "shipping_scams": {
+    "high_risk": [
+      "expédition uniquement",
+      "pas de remise en main propre",
+      "livraison comprise",
+      "envoi inclus",
+      "transporteur privé",
+      "coursier",
+      "colissimo gratuit"
+    ],
+    "medium_risk": [
+      "expédition possible",
+      "envoi par la poste"
+    ]
+  },
+  
+  "contact_anomalies": {
+    "high_risk": [
+      "whatsapp uniquement",
+      "sms seulement",
+      "telegram",
+      "signal",
+      "viber",
+      "pas d'appel",
+      "message privé",
+      "contact par mail"
+    ],
+    "medium_risk": [
+      "préfère sms",
+      "whatsapp de préférence"
+    ]
+  },
+  
+  "fake_authenticity": {
+    "high_risk": [
+      "100% authentique",
+      "garantie authenticité",
+      "jamais porté",
+      "état neuf sous blister",
+      "facture d'achat",
+      "certificat authenticité",
+      "acheté chez",
+      "provenance boutique"
+    ],
+    "medium_risk": [
+      "très bon état",
+      "comme neuf",
+      "jamais utilisé"
+    ]
+  },
+  
+  "emotional_manipulation": {
+    "high_risk": [
+      "pour ma fille",
+      "cadeau anniversaire",
+      "surprise",
+      "personne âgée",
+      "handicapé",
+      "maladie",
+      "hôpital",
+      "difficultés financières",
+      "au chômage"
+    ],
+    "medium_risk": [
+      "besoin rapide",
+      "pressé"
+    ]
+  },
+  
+  "location_vagueness": {
+    "high_risk": [
+      "région parisienne",
+      "proche paris",
+      "ile de france",
+      "déplacement possible",
+      "toute la france",
+      "expédition partout"
+    ],
+    "medium_risk": [
+      "environ de",
+      "secteur",
+      "alentours"
+    ]
+  },
+  
+  "price_justification": {
+    "high_risk": [
+      "prix sacrifié",
+      "bradé",
+      "liquidation totale",
+      "perte financière",
+      "en dessous du prix",
+      "très bon prix",
+      "affaire exceptionnelle",
+      "occasion unique"
+    ],
+    "medium_risk": [
+      "négociable",
+      "à débattre",
+      "prix ferme"
+    ]
+  }
+}
